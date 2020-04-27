@@ -47,7 +47,7 @@ mobile device in his/her hand.
 
 ---
 
-### [Orientation phone](https://intel.github.io/generic-sensor-demos/orientation-phone/) ([code](https://github.com/intel/generic-sensor-demos/tree/master/orientation-phone))
+### [Orientation phone](https://dianmuz.github.io/generic-sensor-demos/orientation-phone/) ([code](https://github.com/dianmuz/generic-sensor-demos/tree/master/orientation-phone))
 
 This simple demo illustrates how an absolute orientation sensor can be used to
 modify rotation quaternion of a 3D model. The <code>model</code> is a three.js
