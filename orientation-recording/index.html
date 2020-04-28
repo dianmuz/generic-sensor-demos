@@ -35,6 +35,7 @@
         function copyText(){
          document.getElementById("result").select();
          document.execCommand('copy');
+         document.getElementById("result").value = 'new entry \n';
         }
         </script>
         <textarea id='result'></textarea><br>
@@ -82,7 +83,7 @@
                 sensor.onreading = () => {
                     model.quaternion.fromArray(sensor.quaternion).inverse();
                     document.getElementById("demo-ori").innerHTML = 'quarternion, ' + sensor.quaternion.toFixed(3);
-                    document.getElementById("result").value += 'quarternion, ' + sensor.quaternion.toFixed(3);
+                    document.getElementById("result").value += 'quarternion, ' + sensor.quaternion.toFixed(3)+ '\n';
                     }
                 sensor.onerror = (event) => {
                   if (event.error.name == 'NotReadableError') {
@@ -107,7 +108,7 @@
 
         accelerometer.onreading = () => {
             document.getElementById("demo-acc").innerHTML = 'acc reading, x: ' + accelerometer.x.toFixed(3) + ',  y: ' + accelerometer.y.toFixed(3)+ ',  z: ' +accelerometer.z.toFixed(3);
-            document.getElementById("result").value += 'acc reading, x: ' + accelerometer.x.toFixed(3) + ',  y: ' + accelerometer.y.toFixed(3)+ ',  z: ' +accelerometer.z.toFixed(3);
+            document.getElementById("result").value += 'acc reading, x: ' + accelerometer.x.toFixed(3) + ',  y: ' + accelerometer.y.toFixed(3)+ ',  z: ' +accelerometer.z.toFixed(3) + '\n';
             }
         accelerometer.start()
         
@@ -127,7 +128,7 @@
 
         gyroscope.onreading = () => {
             document.getElementById("demo-gyro").innerHTML = 'gyroscope reading, x: ' + gyroscope.x.toFixed(3) + ',  y: ' + gyroscope.y.toFixed(3)+ ',  z: ' +gyroscope.z.toFixed(3);
-            document.getElementById("result").value += 'gyroscope reading, x: ' + gyroscope.x.toFixed(3) + ',  y: ' + gyroscope.y.toFixed(3)+ ',  z: ' +gyroscope.z.toFixed(3);
+            document.getElementById("result").value += 'gyroscope reading, x: ' + gyroscope.x.toFixed(3) + ',  y: ' + gyroscope.y.toFixed(3)+ ',  z: ' +gyroscope.z.toFixed(3)+ '\n';
             }
         gyroscope.start()
       
@@ -147,7 +148,7 @@
 
         magnetometer.onreading = () => {
             document.getElementById("demo-mag").innerHTML = 'magnetometer reading, x: ' + magnetometer.x.toFixed(3) + ',  y: ' + magnetometer.y.toFixed(3)+ ',  z: ' +magnetometer.z.toFixed(3);
-            document.getElementById("result").value += 'magnetometer reading, x: ' + magnetometer.x.toFixed(3) + ',  y: ' + magnetometer.y.toFixed(3)+ ',  z: ' +magnetometer.z.toFixed(3);
+            document.getElementById("result").value += 'magnetometer reading, x: ' + magnetometer.x.toFixed(3) + ',  y: ' + magnetometer.y.toFixed(3)+ ',  z: ' +magnetometer.z.toFixed(3)+ '\n';
             }
         magnetometer.start
         
