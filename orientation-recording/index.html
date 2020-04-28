@@ -141,7 +141,7 @@
             
         let accelerometer = null;
             
-        accelerometer = new Accelerometer({frequency:60});
+        accelerometer = new Accelerometer({frequency:30});
 
         accelerometer.onerror = (event) => {
               if (event.error.name == 'NotReadableError') {
@@ -160,7 +160,7 @@
         
         let gyroscope = null;
             
-        gyroscope = new Gyroscope({frequency:60});
+        gyroscope = new Gyroscope({frequency:30});
 
         gyroscope.onerror = (event) => {
               if (event.error.name == 'NotReadableError') {
@@ -178,7 +178,7 @@
 
         let gravitysensor = null;
             
-        gravitysensor = new GravitySensor({frequency:60});
+        gravitysensor = new GravitySensor({frequency:10});
 
         gravitysensor.onerror = (event) => {
               if (event.error.name == 'NotReadableError') {
