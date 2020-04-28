@@ -82,8 +82,8 @@
                 sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
                 sensor.onreading = () => {
                     model.quaternion.fromArray(sensor.quaternion).inverse();
-                    document.getElementById("demo-ori").innerHTML = 'quarternion, ' + sensor.quaternion.toFixed(3);
-                    document.getElementById("result").value += 'quarternion, ' + sensor.quaternion.toFixed(3)+ '\n';
+                    document.getElementById("demo-ori").innerHTML = 'quarternion, ' + sensor.quaternion.toFixed(5);
+                    document.getElementById("result").value += 'quarternion, ' + sensor.quaternion.toFixed(5)+ '\n';
                     }
                 sensor.onerror = (event) => {
                   if (event.error.name == 'NotReadableError') {
@@ -108,8 +108,8 @@
         document.getElementById("demo-acc").innerHTML = "acc reading ";
 
         accelerometer.onreading = () => {
-            document.getElementById("demo-acc").innerHTML = 'acc reading, x: ' + accelerometer.x.toFixed(3) + ',  y: ' + accelerometer.y.toFixed(3)+ ',  z: ' +accelerometer.z.toFixed(3);
-            document.getElementById("result").value += 'acc reading, x: ' + accelerometer.x.toFixed(3) + ',  y: ' + accelerometer.y.toFixed(3)+ ',  z: ' +accelerometer.z.toFixed(3) + '\n';
+            document.getElementById("demo-acc").innerHTML = 'acc reading, x: ' + accelerometer.x.toFixed(5) + ',  y: ' + accelerometer.y.toFixed(5)+ ',  z: ' +accelerometer.z.toFixed(5);
+            document.getElementById("result").value += 'acc reading, ' + accelerometer.x.toFixed(5) + ',  ' + accelerometer.y.toFixed(5)+ ',  ' +accelerometer.z.toFixed(5) + '\n';
             }
         accelerometer.start();
         
@@ -128,8 +128,8 @@
         document.getElementById("demo-gyro").innerHTML = "gyroscope reading ";
 
         gyroscope.onreading = () => {
-            document.getElementById("demo-gyro").innerHTML = 'gyroscope reading, x: ' + gyroscope.x.toFixed(3) + ',  y: ' + gyroscope.y.toFixed(3)+ ',  z: ' +gyroscope.z.toFixed(3);
-            document.getElementById("result").value += 'gyroscope reading, x: ' + gyroscope.x.toFixed(3) + ',  y: ' + gyroscope.y.toFixed(3)+ ',  z: ' +gyroscope.z.toFixed(3)+ '\n';
+            document.getElementById("demo-gyro").innerHTML = 'gyroscope reading, x: ' + gyroscope.x.toFixed(5) + ',  y: ' + gyroscope.y.toFixed(5)+ ',  z: ' +gyroscope.z.toFixed(5);
+            document.getElementById("result").value += 'gyroscope reading, ' + gyroscope.x.toFixed(5) + ',  ' + gyroscope.y.toFixed(5)+ ', ' +gyroscope.z.toFixed(5)+ '\n';
             }
         gyroscope.start();
       
@@ -142,13 +142,12 @@
               if (event.error.name == 'NotReadableError') {
                 console.log("magnetometer is not available.");
                 document.getElementById("demo-mag").innerHTML = "magnetometer is not available.";
-                
               }
             }
 
         magnetometer.onreading = () => {
-            document.getElementById("demo-mag").innerHTML = 'magnetometer reading, x: ' + magnetometer.x.toFixed(3) + ',  y: ' + magnetometer.y.toFixed(3)+ ',  z: ' +magnetometer.z.toFixed(3);
-            document.getElementById("result").value += 'magnetometer reading, x: ' + magnetometer.x.toFixed(3) + ',  y: ' + magnetometer.y.toFixed(3)+ ',  z: ' +magnetometer.z.toFixed(3)+ '\n';
+            document.getElementById("demo-mag").innerHTML = 'magnetometer reading, x: ' + magnetometer.x.toFixed(5) + ',  y: ' + magnetometer.y.toFixed(5)+ ',  z: ' +magnetometer.z.toFixed(5);
+            document.getElementById("result").value += 'magnetometer reading, ' + magnetometer.x.toFixed(5) + ',  ' + magnetometer.y.toFixed(5)+ ',  ' +magnetometer.z.toFixed(5)+ '\n';
             }
         magnetometer.start();
         
