@@ -81,7 +81,6 @@
                 console.log(JSON.stringify(options));
                 sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
                 sensor.onreading = () => {
-                    model.quaternion.fromArray(sensor.quaternion).inverse();
                     document.getElementById("demo-ori").innerHTML = 'quarternion, ' + sensor.quaternion.toFixed(5);
                     document.getElementById("result").value += 'quarternion, ' + sensor.quaternion.toFixed(5)+ '\n';
                     }
