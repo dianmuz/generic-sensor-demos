@@ -145,7 +145,6 @@
                 
               }
             }
-        document.getElementById("demo-mag").innerHTML = "magnetometer reading ";
 
         magnetometer.onreading = () => {
             document.getElementById("demo-mag").innerHTML = 'magnetometer reading, x: ' + magnetometer.x.toFixed(3) + ',  y: ' + magnetometer.y.toFixed(3)+ ',  z: ' +magnetometer.z.toFixed(3);
