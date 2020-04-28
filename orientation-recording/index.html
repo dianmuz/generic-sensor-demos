@@ -25,7 +25,7 @@
         <script src="js/OBJLoader.js"></script>
         <script src="js/MTLLoader.js"></script>
         <p id="demo-ori">default</p>
-        <p id="demo-acc">default</p>
+        <p id="demo-acc">default acc</p>
         <script type="module">
             import {
               AbsoluteOrientationSensor,
@@ -145,7 +145,7 @@
                 document.getElementById("demo-acc").innerHTML = "Accelerometer is not available.";
               }
             }
-        document.getElementById("demo").innerHTML = "acc created successfully";
+        document.getElementById("demo-acc").innerHTML = "acc created successfully";
 
         accelerometer.onreading = () => {
             document.getElementById("demo-acc").innerHTML = accelerometer.x.toString();
