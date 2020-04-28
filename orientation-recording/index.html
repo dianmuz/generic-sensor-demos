@@ -177,7 +177,7 @@
 
         let magnetometer = null;
             
-        magnetometer = new Magnetometer({frequency:60});
+        magnetometer = new Magnetometer({frequency:10});
 
         magnetometer.onerror = (event) => {
               if (event.error.name == 'NotReadableError') {
