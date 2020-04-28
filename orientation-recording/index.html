@@ -24,7 +24,8 @@
         <script src="js/three.min.js"></script>
         <script src="js/OBJLoader.js"></script>
         <script src="js/MTLLoader.js"></script>
-        <p id="demo">default</p>
+        <p id="demo-ori">default</p>
+        <p id="demo-acc">default</p>
         <script type="module">
             import {
               AbsoluteOrientationSensor,
@@ -109,7 +110,10 @@
                 const options = { frequency: 60, coordinateSystem };
                 console.log(JSON.stringify(options));
                 sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
-                sensor.onreading = () => model.quaternion.fromArray(sensor.quaternion).inverse();
+                sensor.onreading = () => {
+                    model.quaternion.fromArray(sensor.quaternion).inverse();
+                    document.getElementById("demo-ori").innerHTML = sensor.alpha;
+                    }
                 sensor.onerror = (event) => {
                   if (event.error.name == 'NotReadableError') {
                     console.log("Sensor is not available.");
@@ -138,16 +142,19 @@
         accelerometer.onerror = (event) => {
               if (event.error.name == 'NotReadableError') {
                 console.log("Accelerometer is not available.");
-                document.getElementById("demo").innerHTML = "Accelerometer is not available.";
+                document.getElementById("demo-acc").innerHTML = "Accelerometer is not available.";
               }
             }
         document.getElementById("demo").innerHTML = "acc created successfully";
-        accelerometer.addEventListener('reading', acc_listener);
+
+        accelerometer.onreading = () => {
+            document.getElementById("demo-acc").innerHTML = accelerometer.x.toString();
+            }
         accelerometer.start()
             
             
-        function acc_listener(e){ 
-             document.getElementById('demo').innerHTML = "${e.target.x}, ${e.target.y}, ${e.target.z}";
+        function acc_listener(){ 
+             document.getElementById('demo').innerHTML = event;
         }
      
         
