@@ -59,7 +59,7 @@
                 initSensor();
             }
 
-            <!-- renderScene(); -->
+            renderScene();
             
             
             
@@ -137,7 +137,6 @@
             
         let accelerometer = null;
             
-        <!-- const options = {frequency:60}; -->
         accelerometer = new Accelerometer({frequency:60});
 
         accelerometer.onerror = (event) => {
