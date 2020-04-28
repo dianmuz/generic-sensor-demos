@@ -59,7 +59,7 @@
                 initSensor();
             }
 
-            renderScene();
+            <!-- renderScene(); -->
             
             
             
@@ -137,12 +137,13 @@
             
         let accelerometer = null;
         try {
-            const options = {frequency:50};
-            accelerometer = new Accelerometer(options);
+            <!-- const options = {frequency:60}; -->
+            accelerometer = new Accelerometer({frequency:60});
 
             accelerometer.onerror = (event) => {
                   if (event.error.name == 'NotReadableError') {
                     console.log("Accelerometer is not available.");
+                    document.getElementById("demo").innerHTML = "Accelerometer is not available.";
                   }
                 }
             accelerometer.addEventListener('reading', acc_listener);
