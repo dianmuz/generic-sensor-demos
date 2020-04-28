@@ -145,19 +145,18 @@
                     console.log("Accelerometer is not available.");
                   }
                 }
-            
+            accelerometer.addEventListener('reading', acc_listener);
             accelerometer.start()
             }
             
-     
-        accelerometer.addEventListener('reading', acc_listener)
         function acc_listener(e){
              const acc_container = document.getElementById('demo');
              acc_container.innerHTML = "${e.target.x}, ${e.target.y}, ${e.target.z}";
         }
+     
         
 
-        acc_listener();
+        
         </script>
         <div id="console"></div>
     </body>
