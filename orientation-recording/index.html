@@ -74,7 +74,7 @@
             }
 
            
-            
+            initSensor();
 
             function initSensor() {
                 const options = { frequency: 60, coordinateSystem };
@@ -88,6 +88,7 @@
                 sensor.onerror = (event) => {
                   if (event.error.name == 'NotReadableError') {
                     console.log("Sensor is not available.");
+                    document.getElementById("demo-ori").innerHTML = 'quarternion sesor not available';
                   }
                 }
                 sensor.start();
