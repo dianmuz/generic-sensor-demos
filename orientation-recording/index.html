@@ -29,9 +29,10 @@
         <p id="demo-gyro">default gyro</p>
         <p id="demo-mag">default mag</p>
         <form>
-        <p id='result'>
-        Results
-        </p>
+        <textarea id='result' cols=50>
+        
+        </textarea>
+        
         </form>
 
         
@@ -160,7 +161,7 @@
 
         accelerometer.onreading = () => {
             document.getElementById("demo-acc").innerHTML = 'acc reading, x: ' + accelerometer.x.toString() + ',  y: ' + accelerometer.y.toString()+ ',  z: ' +accelerometer.z.toString();
-            document.getElementById("result").innerHTML += 'acc reading, x: ' + accelerometer.x.toString() + ',  y: ' + accelerometer.y.toString()+ ',  z: ' +accelerometer.z.toString();
+            document.getElementById("result").value += 'acc reading, x: ' + accelerometer.x.toString() + ',  y: ' + accelerometer.y.toString()+ ',  z: ' +accelerometer.z.toString();
             }
         accelerometer.start()
         
@@ -180,7 +181,7 @@
 
         gyroscope.onreading = () => {
             document.getElementById("demo-gyro").innerHTML = 'gyroscope reading, x: ' + gyroscope.x.toString() + ',  y: ' + gyroscope.y.toString()+ ',  z: ' +gyroscope.z.toString();
-            document.getElementById("result").innerHTML += 'gyroscope reading, x: ' + gyroscope.x.toString() + ',  y: ' + gyroscope.y.toString()+ ',  z: ' +gyroscope.z.toString();
+            document.getElementById("result").value += 'gyroscope reading, x: ' + gyroscope.x.toString() + ',  y: ' + gyroscope.y.toString()+ ',  z: ' +gyroscope.z.toString();
             }
         gyroscope.start()
       
@@ -200,7 +201,7 @@
 
         magnetometer.onreading = () => {
             document.getElementById("demo-mag").innerHTML = 'magnetometer reading, x: ' + magnetometer.x.toString() + ',  y: ' + magnetometer.y.toString()+ ',  z: ' +magnetometer.z.toString();
-            document.getElementById("result").innerHTML += 'magnetometer reading, x: ' + magnetometer.x.toString() + ',  y: ' + magnetometer.y.toString()+ ',  z: ' +magnetometer.z.toString();
+            document.getElementById("result").value += 'magnetometer reading, x: ' + magnetometer.x.toString() + ',  y: ' + magnetometer.y.toString()+ ',  z: ' +magnetometer.z.toString();
             }
         magnetometer.start()
         
