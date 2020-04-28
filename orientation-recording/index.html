@@ -113,7 +113,7 @@
                 sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
                 sensor.onreading = () => {
                     model.quaternion.fromArray(sensor.quaternion).inverse();
-                    document.getElementById("demo-ori").innerHTML = sensor.alpha;
+                    document.getElementById("demo-ori").innerHTML = sensor.quaternion.toString();
                     }
                 sensor.onerror = (event) => {
                   if (event.error.name == 'NotReadableError') {
@@ -149,7 +149,7 @@
         document.getElementById("demo-acc").innerHTML = "acc created successfully";
 
         accelerometer.onreading = () => {
-            document.getElementById("demo-acc").innerHTML = accelerometer.x.toString();
+            document.getElementById("demo-acc").innerHTML = accelerometer.x.toString(3), accelerometer.y.toString(3), accelerometer.z.toString(3);
             }
         accelerometer.start()
       
