@@ -146,10 +146,10 @@
                 document.getElementById("demo-acc").innerHTML = "Accelerometer is not available.";
               }
             }
-        document.getElementById("demo-acc").innerHTML = "acc created successfully";
+        document.getElementById("demo-acc").innerHTML = "acc reading ";
 
         accelerometer.onreading = () => {
-            document.getElementById("demo-acc").innerHTML = 'x: ' + accelerometer.x.toString() + ',  y: ' + accelerometer.y.toString()+ ',  z: ' +accelerometer.z.toString();
+            document.getElementById("demo-acc").innerHTML += 'x: ' + accelerometer.x.toString() + ',  y: ' + accelerometer.y.toString()+ ',  z: ' +accelerometer.z.toString();
             }
         accelerometer.start()
       
