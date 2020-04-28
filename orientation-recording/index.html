@@ -24,6 +24,7 @@
         <script src="js/three.min.js"></script>
         <script src="js/OBJLoader.js"></script>
         <script src="js/MTLLoader.js"></script>
+        <p id="update">update tag</p>
         <p id="demo-ori">default</p>
         <p id="demo-acc">default acc</p>
         <script type="module">
@@ -151,13 +152,7 @@
             document.getElementById("demo-acc").innerHTML = accelerometer.x.toString();
             }
         accelerometer.start()
-            
-            
-        function acc_listener(){ 
-             document.getElementById('demo').innerHTML = event;
-        }
-     
-        
+      
 
         
         </script>
