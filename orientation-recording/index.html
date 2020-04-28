@@ -28,10 +28,10 @@
         <p id="demo-acc">default acc</p>
         <p id="demo-gyro">default gyro</p>
         <p id="demo-mag">default mag</p>
-        <form action=copyToClipboard>
+        <form>
         <textarea id='result'> 
         </textarea>
-        <input type="submit" value="copy">
+        <button onclick="copy()">Copy</button>
         </form>
 
         
@@ -205,22 +205,12 @@
             }
         magnetometer.start
         
-        
-        
-        const copyToClipboard = str => {
-            const el = document.createElement('textarea');
-            el.value = str;
-            el.setAttribute('readonly', '');
-            el.style.position = 'absolute';
-            el.style.left = '-9999px';
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            document.getElementById("result").value = ''
-            };
-        
-        
+        function copy() {
+            let textarea = document.getElementById("result");
+            textarea.select();
+            document.execCommand("copy");
+            document.getElementById("result").value = '';
+            }
         
         
         </script>
