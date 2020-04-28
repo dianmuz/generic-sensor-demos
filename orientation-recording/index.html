@@ -182,7 +182,7 @@
         magnetometer.onerror = (event) => {
               if (event.error.name == 'NotReadableError') {
                 console.log("magnetometer is not available.");
-                document.getElementById("demo-acc").innerHTML = "magnetometer is not available.";
+                document.getElementById("demo-mag").innerHTML = "magnetometer is not available.";
               }
             }
         document.getElementById("demo-mag").innerHTML = "magnetometer reading ";
