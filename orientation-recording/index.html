@@ -81,8 +81,8 @@
                 console.log(JSON.stringify(options));
                 sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
                 sensor.onreading = () => {
-                    document.getElementById("demo-ori").innerHTML = 'quarternion, ' + sensor.quaternion.toFixed(5);
-                    document.getElementById("result").value += 'quarternion, ' + sensor.quaternion.toFixed(5)+ '\n';
+                    document.getElementById("demo-ori").innerHTML = 'quarternion, ' + sensor.quaternion;
+                    document.getElementById("result").value += 'quarternion, ' + sensor.quaternion + '\n';
                     }
                 sensor.onerror = (event) => {
                   if (event.error.name == 'NotReadableError') {
