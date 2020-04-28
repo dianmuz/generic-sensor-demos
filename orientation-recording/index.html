@@ -28,6 +28,16 @@
         <p id="demo-acc">default acc</p>
         <p id="demo-gyro">default gyro</p>
         <p id="demo-mag">default mag</p>
+        <form>
+        <textarea id='result'>
+        Results
+        </textarea>
+        <br />
+        <input type="submit" />
+        </form>
+
+        
+        
         <script type="module">
             import {
               AbsoluteOrientationSensor,
@@ -151,7 +161,8 @@
         document.getElementById("demo-acc").innerHTML = "acc reading ";
 
         accelerometer.onreading = () => {
-            document.getElementById("demo-acc").innerHTML = 'acc reading x: ' + accelerometer.x.toString() + ',  y: ' + accelerometer.y.toString()+ ',  z: ' +accelerometer.z.toString();
+            document.getElementById("demo-acc").innerHTML = 'acc reading, x: ' + accelerometer.x.toString() + ',  y: ' + accelerometer.y.toString()+ ',  z: ' +accelerometer.z.toString();
+            document.getElementById("result").innerHTML += 'acc reading, x: ' + accelerometer.x.toString() + ',  y: ' + accelerometer.y.toString()+ ',  z: ' +accelerometer.z.toString();
             }
         accelerometer.start()
         
@@ -170,7 +181,8 @@
         document.getElementById("demo-gyro").innerHTML = "gyroscope reading ";
 
         gyroscope.onreading = () => {
-            document.getElementById("demo-gyro").innerHTML = 'gyroscope reading x: ' + gyroscope.x.toString() + ',  y: ' + gyroscope.y.toString()+ ',  z: ' +gyroscope.z.toString();
+            document.getElementById("demo-gyro").innerHTML = 'gyroscope reading, x: ' + gyroscope.x.toString() + ',  y: ' + gyroscope.y.toString()+ ',  z: ' +gyroscope.z.toString();
+            document.getElementById("result").innerHTML += 'gyroscope reading, x: ' + gyroscope.x.toString() + ',  y: ' + gyroscope.y.toString()+ ',  z: ' +gyroscope.z.toString();
             }
         gyroscope.start()
       
@@ -183,14 +195,20 @@
               if (event.error.name == 'NotReadableError') {
                 console.log("magnetometer is not available.");
                 document.getElementById("demo-mag").innerHTML = "magnetometer is not available.";
+                
               }
             }
         document.getElementById("demo-mag").innerHTML = "magnetometer reading ";
 
         magnetometer.onreading = () => {
-            document.getElementById("demo-mag").innerHTML = 'magnetometer reading x: ' + magnetometer.x.toString() + ',  y: ' + magnetometer.y.toString()+ ',  z: ' +magnetometer.z.toString();
+            document.getElementById("demo-mag").innerHTML = 'magnetometer reading, x: ' + magnetometer.x.toString() + ',  y: ' + magnetometer.y.toString()+ ',  z: ' +magnetometer.z.toString();
+            document.getElementById("result").innerHTML += 'magnetometer reading, x: ' + magnetometer.x.toString() + ',  y: ' + magnetometer.y.toString()+ ',  z: ' +magnetometer.z.toString();
             }
         magnetometer.start()
+        
+        
+        
+        
         </script>
         <div id="console"></div>
     </body>
