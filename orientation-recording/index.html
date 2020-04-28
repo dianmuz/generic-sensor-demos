@@ -178,7 +178,7 @@
 
         let gravitysensor = null;
             
-        gravitysensor = new GravitySensor({frequency:120});
+        gravitysensor = new GravitySensor({frequency:30});
 
         gravitysensor.onerror = (event) => {
               if (event.error.name == 'NotReadableError') {
