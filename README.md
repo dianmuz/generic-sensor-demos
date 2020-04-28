@@ -37,7 +37,8 @@ You could run demos from [GitHub Pages for this repository.](https://intel.githu
 
 ## Demos description
 
-### [Costumed](https://dianmuz.github.io/generic-sensor-demos/orientation-recording/) ([code](https://github.com/dianmuz/generic-sensor-demos/tree/master/orientation-recording))
+### [customized](https://dianmuz.github.io/generic-sensor-demos/orientation-recording/) ([code](https://github.com/dianmuz/generic-sensor-demos/tree/master/orientation-recording))
+customized app to test some modifications
 
 ### [Punchmeter](https://intel.github.io/generic-sensor-demos/punchmeter/) ([code](https://github.com/intel/generic-sensor-demos/tree/master/punchmeter))
 
