@@ -146,13 +146,14 @@
                     document.getElementById("demo").innerHTML = "Accelerometer is not available.";
                   }
                 }
+            document.getElementById("demo").innerHTML = "acc created successfully";
             accelerometer.addEventListener('reading', acc_listener);
             accelerometer.start()
             }
             
         function acc_listener(e){
-             const acc_container = document.getElementById('demo');
-             acc_container.innerHTML = "${e.target.x}, ${e.target.y}, ${e.target.z}";
+             
+             document.getElementById('demo').innerHTML = "${e.target.x}, ${e.target.y}, ${e.target.z}";
         }
      
         
