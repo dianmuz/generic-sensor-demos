@@ -136,23 +136,22 @@
             }
             
         let accelerometer = null;
-        try {
-            <!-- const options = {frequency:60}; -->
-            accelerometer = new Accelerometer({frequency:60});
-
-            accelerometer.onerror = (event) => {
-                  if (event.error.name == 'NotReadableError') {
-                    console.log("Accelerometer is not available.");
-                    document.getElementById("demo").innerHTML = "Accelerometer is not available.";
-                  }
-                }
-            document.getElementById("demo").innerHTML = "acc created successfully";
-            accelerometer.addEventListener('reading', acc_listener);
-            accelerometer.start()
-            }
             
-        function acc_listener(e){
-             
+        <!-- const options = {frequency:60}; -->
+        accelerometer = new Accelerometer({frequency:60});
+
+        accelerometer.onerror = (event) => {
+              if (event.error.name == 'NotReadableError') {
+                console.log("Accelerometer is not available.");
+                document.getElementById("demo").innerHTML = "Accelerometer is not available.";
+              }
+            }
+        document.getElementById("demo").innerHTML = "acc created successfully";
+        accelerometer.addEventListener('reading', acc_listener);
+        accelerometer.start()
+            
+            
+        function acc_listener(e){ 
              document.getElementById('demo').innerHTML = "${e.target.x}, ${e.target.y}, ${e.target.z}";
         }
      
