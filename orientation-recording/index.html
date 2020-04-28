@@ -27,14 +27,13 @@
         <p id="demo-ori">default</p>
         <p id="demo-acc">default acc</p>
         <p id="demo-gyro">default gyro</p>
-        <p id="demo-gravity">default gravity</p>
+        <p id="demo-mag">default mag</p>
         <script type="module">
             import {
               AbsoluteOrientationSensor,
               RelativeOrientationSensor,
               Accelerometer,
-              Gyroscope,
-              GravitySensor
+              Gyroscope
             } from '../sensor-polyfills/motion-sensors.js';
                
             const params = new URLSearchParams(new URL(window.location.href).search.slice(1));
@@ -176,22 +175,22 @@
         gyroscope.start()
       
 
-        let gravitysensor = null;
+        let magnetometer = null;
             
-        gravitysensor = new GravitySensor({frequency:120});
+        magnetometer = new Magnetometer({frequency:60});
 
-        gravitysensor.onerror = (event) => {
+        magnetometer.onerror = (event) => {
               if (event.error.name == 'NotReadableError') {
-                console.log("gravitysensor is not available.");
-                document.getElementById("demo-gravity").innerHTML = "gravitysensor is not available.";
+                console.log("magnetometer is not available.");
+                document.getElementById("demo-acc").innerHTML = "magnetometer is not available.";
               }
             }
-        document.getElementById("demo-gravity").innerHTML = "GravitySensor reading ";
+        document.getElementById("demo-mag").innerHTML = "magnetometer reading ";
 
-        gravitysensor.onreading = () => {
-            document.getElementById("demo-gravity").innerHTML = 'GravitySensor reading x: ' + gravitysensor.x.toString() + ',  y: ' + gravitysensor.y.toString()+ ',  z: ' +gravitysensor.z.toString();
+        magnetometer.onreading = () => {
+            document.getElementById("demo-mag").innerHTML = 'magnetometer reading x: ' + magnetometer.x.toString() + ',  y: ' + magnetometer.y.toString()+ ',  z: ' +magnetometer.z.toString();
             }
-        gravitysensor.start()
+        magnetometer.start()
         </script>
         <div id="console"></div>
     </body>
